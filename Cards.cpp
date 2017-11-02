@@ -19,18 +19,18 @@ Cards::Cards()
  * @param _f	    f
  * @param _b	    b
  * @param _c	    c
- * @param fc	    fill color
- * @param bc	    border color
+ * @param val	    the value associated with the card
  * @param fdTex	    will be the face down texture, back of card
  * @param fuTex	    will be the face up texture, front of card the part with the seal/crest
  */
-Cards::Cards(vec3 _e, vec3 _f, vec3 _b, vec3 _c, Texture* fdTex, Texture* fuTex)
+Cards::Cards(vec3 _e, vec3 _f, vec3 _b, vec3 _c, int val, Texture* fdTex, Texture* fuTex)
 {
 	//draw in e, f, b, c
 	e = _e;
 	f = _f;
 	b = _b;
 	c = _c;
+	value =val
 	
 	facedownTexture=fdTex;
 	faceupTexture=fuTex;
