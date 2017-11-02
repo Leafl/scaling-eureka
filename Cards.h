@@ -32,12 +32,23 @@ public:
 	Cards(vec3 _e, vec3 _f, vec3 _b, vec3 _c, Texture* fdTex= NULL, Texture* fuTex= NULL);
 
 	// The draw function
-	void draw(Shader*);//draw the rectangular prisim
+	void draw(Shader*);//draw the card
+	
+	void getValue();
 
 	virtual ~Cards();
 
 private:
 	foat depth = 1;
+	
+	//values of the cards:
+	// highest				least
+	// 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
+	//ace - 14
+	//king - 13
+	//queen - 12
+	//jack - 11
+	int value;
 	void buildCards();
 	void initalizeRemainingPoints(vec3 _e, vec3 _f, vec3 _b, vec3 _c);
 
