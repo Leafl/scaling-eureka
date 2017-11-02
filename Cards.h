@@ -4,7 +4,8 @@
  *
  * Date: October 30, 2017, 6:53 PM
  *
- * Rectangular Prisim uses Quad1 (Triangle fans)
+ * Cards uses Quad1 (Triangle fans)
+ * Almost identical to Rectangular Prisim1
  */
 
 #ifndef CARDS_H
@@ -27,11 +28,8 @@ public:
 	Cards();
 	Cards(const Cards& orig);
 
-	//give the bottom points build a rectangular prisim
-	Cards(vec3 _e, vec3 _f, vec3 _b, vec3 _c,float  _depth);
-
-	//additional params: fill color, border color, texture
-	Cards(vec3 _e, vec3 _f, vec3 _b, vec3 _c, float _depth, vec3 fc, vec3 bc, Texture* tex= NULL);
+	//give the bottom points build a rectangular prisim, adds a face up and face down texture
+	Cards(vec3 _e, vec3 _f, vec3 _b, vec3 _c, Texture* fdTex= NULL, Texture* fuTex= NULL);
 
 	void setTexture(Texture*);
 
@@ -41,23 +39,23 @@ public:
 	virtual ~Cards();
 
 private:
+	foat depth = 1;
 	void buildRectangularPrisim1();
-	void initalizeRemainingPoints(vec3 _e, vec3 _f, vec3 _b, vec3 _c, float _depth);
-	
-	float depth;
+	void initalizeRemainingPoints(vec3 _e, vec3 _f, vec3 _b, vec3 _c);
 
-	//uses triangle fan to build the quads1
+	//uses quads1 fan to build the Cards
 	Quad1* ein;
 	Quad1* zwei;
 	Quad1* drei;
 	Quad1* vier;
 	Quad1* fuenf;
 	Quad1* sechs;
-	Texture* texture;
+	Texture* facedownTexture;
+	Texture* faceupTexture;
 
 	// Colors
-	vec3 fillColor;
-	vec3 borderColor;
+	vec3 fillColor = vec3 (1,1,1);	//white
+	vec3 borderColor = vec3 (0,0,0); //black
 
 	//the rectangular prisim points
 	vec3 a;
