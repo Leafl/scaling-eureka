@@ -31,8 +31,6 @@ public:
 	//give the bottom points build a rectangular prisim, adds a face up and face down texture
 	Cards(vec3 _e, vec3 _f, vec3 _b, vec3 _c, Texture* fdTex= NULL, Texture* fuTex= NULL);
 
-	void setTexture(Texture*);
-
 	// The draw function
 	void draw(Shader*);//draw the rectangular prisim
 
