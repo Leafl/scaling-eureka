@@ -39,6 +39,13 @@ Cards::Cards(vec3 _e, vec3 _f, vec3 _b, vec3 _c, Texture* fdTex, Texture* fuTex)
 	initalizeRemainingPoints(_e, _f, _b, _c);
 	buildRectangularPrisim1();
 }
+/**
+ * returns the value of the card
+ */
+void Cards::getValue()
+{
+	return value;
+}
 
 /**
  * Initalizes the rest of the ponts that aren't already
