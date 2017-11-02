@@ -38,7 +38,7 @@ public:
 
 private:
 	foat depth = 1;
-	void buildRectangularPrisim1();
+	void buildCards();
 	void initalizeRemainingPoints(vec3 _e, vec3 _f, vec3 _b, vec3 _c);
 
 	//uses quads1 fan to build the Cards
